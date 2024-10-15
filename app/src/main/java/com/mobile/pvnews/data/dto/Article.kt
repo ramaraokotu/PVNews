@@ -1,4 +1,4 @@
-package com.mobile.pvnews.data.model
+package com.mobile.pvnews.data.dto
 
 import com.google.gson.annotations.SerializedName
 

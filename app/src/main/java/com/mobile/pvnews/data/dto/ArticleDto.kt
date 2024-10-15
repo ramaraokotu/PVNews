@@ -2,7 +2,7 @@ package com.mobile.pvnews.data.dto
 
 import com.google.gson.annotations.SerializedName
 
-data class Article(
+data class ArticleDto(
     @SerializedName("title")
     val title: String = "",
     @SerializedName("description")
@@ -12,5 +12,5 @@ data class Article(
     @SerializedName("urlToImage")
     val imageUrl: String = "",
     @SerializedName("source")
-    val articleSource: ArticleSource
+    val articleSource: ArticleSourceDto
 )

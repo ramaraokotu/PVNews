@@ -1,10 +1,8 @@
-package com.mobile.pvnews.data.dto
+package com.mobile.pvnews.domain.model
 
 import com.google.gson.annotations.SerializedName
 
 data class ArticleSource(
-    @SerializedName("id")
     val id: String? = null,
-    @SerializedName("name")
     val name: String = ""
 )

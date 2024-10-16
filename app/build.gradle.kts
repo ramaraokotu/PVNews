@@ -63,7 +63,15 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.navigation.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.core.splashscreen)
+    implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.navigation.runtime.ktx)
+
+    //Coil
     implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 
     //NetWork
     implementation(libs.retrofit)
@@ -75,6 +83,15 @@ dependencies {
     kapt(libs.androidx.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
     kapt(libs.dagger.hilt.compiler)
+
+    //Coroutines
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
+    implementation(libs.lifecycle.viewmodel.ktx)
+
+    //Browser
+    implementation(libs.androidx.browser)
+
 
     //Unit test
     testImplementation(libs.junit)

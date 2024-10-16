@@ -1,5 +1,6 @@
 package com.mobile.pvnews.data.remote
 
+import com.mobile.pvnews.data.dto.ArticleDto
 import com.mobile.pvnews.data.dto.TopHeadlinesResponse
 import retrofit2.Response
 import retrofit2.http.GET

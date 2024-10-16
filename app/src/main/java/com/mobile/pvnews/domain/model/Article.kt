@@ -7,3 +7,4 @@ data class Article(
     val imageUrl: String = "",
     val articleSource: ArticleSource
 )
+

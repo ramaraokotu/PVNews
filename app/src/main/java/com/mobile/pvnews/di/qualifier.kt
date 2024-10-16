@@ -1,4 +1,4 @@
-package com.mobile.pvnews.data.di
+package com.mobile.pvnews.di
 
 import javax.inject.Qualifier
 

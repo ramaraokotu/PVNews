@@ -1,4 +1,4 @@
-package com.mobile.pvnews.ui.theme
+package com.mobile.pvnews.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -1,11 +1,15 @@
-package com.mobile.pvnews.data.di.module
+package com.mobile.pvnews.di.module
 
 import android.content.Context
 
-import com.mobile.pvnews.data.di.BaseUrl
-import com.mobile.pvnews.data.di.NetworkAPIKey
+import com.mobile.pvnews.di.BaseUrl
+import com.mobile.pvnews.di.NetworkAPIKey
 import com.mobile.pvnews.data.remote.ApiKeyInterceptor
 import com.mobile.pvnews.data.remote.TopHeadlineApiService
+import com.mobile.pvnews.data.remote.TopHeadlineDataSource
+import com.mobile.pvnews.data.repository.TopHeadlinesRepositoryImpl
+import com.mobile.pvnews.domain.repository.TopHeadlineRepository
+import com.mobile.pvnews.domain.usecase.GetTopHeadlineUseCase
 import com.mobile.pvnews.utils.AppConstants
 import com.mobile.pvnews.utils.DefaultDispatcherProvider
 import com.mobile.pvnews.utils.DispatcherProvider
@@ -81,4 +85,28 @@ class ApplicationModule {
     @NetworkAPIKey
     @Provides
     fun provideApiKey(): String = AppConstants.API_KEY
+
+    @Provides
+    @Singleton
+    fun provideTopHeadlinesDataSource(
+        apiService: TopHeadlineApiService
+    ): TopHeadlineDataSource {
+        return TopHeadlineDataSource(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideTopHeadlinesRepository(
+        topHeadlineDataSource: TopHeadlineDataSource
+    ): TopHeadlineRepository {
+        return TopHeadlinesRepositoryImpl(topHeadlineDataSource)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetTopHeadlineUseCase(
+        topHeadlineRepository: TopHeadlineRepository
+    ): GetTopHeadlineUseCase {
+        return GetTopHeadlineUseCase(topHeadlineRepository)
+    }
 }

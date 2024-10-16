@@ -1,6 +1,6 @@
 package com.mobile.pvnews.data.remote
 
-import com.mobile.pvnews.data.di.NetworkAPIKey
+import com.mobile.pvnews.di.NetworkAPIKey
 import okhttp3.Interceptor
 import okhttp3.Response
 

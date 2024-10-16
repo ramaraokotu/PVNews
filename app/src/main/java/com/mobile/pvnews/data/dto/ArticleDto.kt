@@ -1,6 +1,7 @@
 package com.mobile.pvnews.data.dto
 
 import com.google.gson.annotations.SerializedName
+import com.mobile.pvnews.domain.model.Article
 
 data class ArticleDto(
     @SerializedName("title")
@@ -14,3 +15,14 @@ data class ArticleDto(
     @SerializedName("source")
     val articleSource: ArticleSourceDto
 )
+
+fun ArticleDto.toArticle(): Article {
+    return Article(
+        title = title,
+        description = description ?: "",
+        url = url,
+        imageUrl = imageUrl ?: "",
+        articleSource = articleSource.toArticleSource()
+    )
+}
+
